@@ -2,398 +2,430 @@
 import Layout from '~/layouts/PageLayout.astro';
 
 import Hero from '~/components/widgets/Hero.astro';
-import Note from '~/components/widgets/Note.astro';
-import Features from '~/components/widgets/Features.astro';
-import Features2 from '~/components/widgets/Features2.astro';
-import Steps from '~/components/widgets/Steps.astro';
 import Content from '~/components/widgets/Content.astro';
-import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
-import FAQs from '~/components/widgets/FAQs.astro';
 import Stats from '~/components/widgets/Stats.astro';
+import Features from '~/components/widgets/Features.astro';
+import Contact from '~/components/widgets/Contact.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
+import Button from '~/components/ui/Button.astro';
+import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 const metadata = {
-  title: 'AstroWind — Free template for creating websites with Astro + Tailwind CSS',
+  title: '本質のコンパス — 小野和彦',
   ignoreTitleTemplate: true,
 };
 ---
 
 <Layout metadata={metadata}>
-  <!-- Hero Widget ******************* -->
 
+  <!-- Section 1: ヒーロー -->
   <Hero
+    id="hero"
     actions={[
       {
         variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        text: '話してみる（60分・無料）',
+        href: '#contact',
       },
-      { text: 'Learn more', href: '#features' },
     ]}
-    image={{ src: '~/assets/images/hero-image.png', alt: 'AstroWind Hero Image' }}
   >
+    <Fragment slot="bg">
+      <div class="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp&fit=crop"
+          alt=""
+          class="w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 bg-black/50"></div>
+      </div>
+    </Fragment>
+
     <Fragment slot="title">
-      Free template for <span class="hidden xl:inline">creating websites with</span>
-      <span class="text-accent dark:text-white"> Astro 5.0</span> + Tailwind CSS
+      <span class="text-white">鍵は、自分の中にある。</span><br />
+      <span class="text-white/90 text-3xl md:text-4xl">でも、一人では見えない。</span>
     </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        <span class="font-semibold">AstroWind</span> is a free, customizable and production-ready template for Astro 5.0
-        + Tailwind CSS.</span
-      >
-      <span class="block mb-1 sm:hidden font-bold text-blue-600">AstroWind: Production-ready.</span>
-      Suitable for Startups, Small Business, SaaS websites, Professional Portfolios, Marketing websites, Landing Pages &
-      Blogs.
+      <span class="text-white/80">
+        うまくいかない。動けない。変われない。<br />
+        その原因を、ずっと外に探していませんか。<br /><br />
+        私もそうでした。<br /><br />
+        でも、答えはどこにもなかった。<br /><br />
+        気づいたら、ずっと探していたものは<br />
+        自分の中にありました。<br /><br />
+        一人では見えなかったものが、<br />
+        誰かと話すことで、少しずつ見えてきた。<br /><br />
+        そういう経験から、このサイトを作っています。
+      </span>
     </Fragment>
   </Hero>
 
-  <!-- Note Widget ******************* -->
+  <!-- Section 2: 静かな問いかけ -->
+  <WidgetWrapper id="question" containerClass="max-w-4xl mx-auto py-20 md:py-28 lg:py-32">
+    <div class="text-center" style="font-size: 1.4rem; line-height: 2.2;">
+      <p class="text-default dark:text-slate-300">
+        行動できないのって、<br />
+        意志が弱いせいじゃないと思うんです。<br /><br />
+        努力が足りないわけでも、<br />
+        環境が悪いわけでもなくて。<br /><br />
+        ただ、まだ「自分の中にあるもの」が<br />
+        見えていないだけじゃないかな、と。<br /><br />
+        私自身、そうでした。
+      </p>
+    </div>
+  </WidgetWrapper>
 
-  <Note title="Philosophy:" description="Simplicity, Best Practices and High Performance" />
+  <!-- Section 3: 三日坊主でいい -->
+  <WidgetWrapper id="reframe" containerClass="max-w-4xl mx-auto py-20 md:py-28 lg:py-32">
+    <div class="text-center text-lg leading-relaxed text-default dark:text-slate-300">
+      <p>
+        三日坊主、飽きる、努力する。<br /><br />
+        そういう言葉に振り回されるのって、<br />
+        しんどいですよね。<br /><br />
+        でも、ちょっと待ってほしくて。<br /><br />
+        飽きる感覚って、実はとても大切なシグナルで。<br />
+        「それ以上、同じことをしなくていいよ」<br />
+        って、自分が教えてくれているんだと思う。<br /><br />
+        努力しているって感覚も、<br />
+        「頑張ってるよ」っていうシグナルで。<br /><br />
+        でも考えてみると、<br />
+        本当にできるようになったこととか、<br />
+        自然と続いていることって、
+      </p>
+      <p class="mt-8 text-2xl md:text-3xl font-bold text-default dark:text-white">
+        頑張っていないときじゃなかったですか？
+      </p>
+    </div>
+  </WidgetWrapper>
 
-  <!-- Features Widget *************** -->
+  <!-- Section 4: 空回りしていませんか？ -->
+  <WidgetWrapper id="essence" containerClass="max-w-4xl mx-auto py-20 md:py-28 lg:py-32">
+    <div class="text-center text-lg leading-relaxed text-default dark:text-slate-300">
+      <p>
+        学ぶことって、大切ですよね。<br /><br />
+        でも、やり方によっては<br />
+        すごく空回りしやすい。<br /><br />
+        細かいことをどんどん覚えていっても、<br />
+        全体が見えていないと、<br />
+        何のためにやっているのかわからなくなる。<br /><br />
+        大きく広く学んで、<br />
+        本質を掴む。<br /><br />
+        そこから初めて、<br />
+        やっていることが自分の中でつながってくる。<br /><br />
+        「あ、これってそういうことか」って。<br /><br />
+        その感覚、覚えていますか？
+      </p>
+    </div>
+  </WidgetWrapper>
 
-  <Features
-    id="features"
-    tagline="Features"
-    title="What you get with AstroWind"
-    subtitle="One of the most professional and comprehensive templates currently on the market. Most starred & forked Astro theme in 2022, 2023 and 2024."
-    items={[
-      {
-        title: 'Astro + Tailwind CSS Integration',
-        description:
-          'A seamless integration between two great frameworks that offer high productivity, performance and versatility.',
-        icon: 'tabler:brand-tailwind',
-      },
-      {
-        title: 'Ready-to-use Components',
-        description:
-          'Widgets made with Tailwind CSS ready to be used in Marketing Websites, SaaS, Blogs, Personal Profiles, Small Business...',
-        icon: 'tabler:components',
-      },
-      {
-        title: 'Best Practices',
-        description:
-          'Creating secure, efficient, and user-friendly websites that deliver exceptional experiences and lasting value.',
-        icon: 'tabler:list-check',
-      },
-      {
-        title: 'Excellent Page Speed',
-        description:
-          'Having a good page speed impacts organic search ranking, improves user experience (UI/UX) and increase conversion rates.',
-        icon: 'tabler:rocket',
-      },
-      {
-        title: 'Search Engine Optimization (SEO)',
-        description:
-          "SEO lies in its ability to enhance a website's visibility, driving organic traffic and enabling it to reach a wider audience.",
-        icon: 'tabler:arrows-right-left',
-      },
-      {
-        title: 'Open to new ideas and contributions',
-        description:
-          'Embracing a culture that is open to new ideas and contributions is integral fostering innovation, collaboration, and a dynamic user experience.',
-        icon: 'tabler:bulb',
-      },
-    ]}
-  />
-
-  <!-- Content Widget **************** -->
-
+  <!-- Section 5: 私のこと -->
   <Content
-    isReversed
-    tagline="Inside template"
-    title="AstroWind's Blueprint: Fun Meets Functionality!"
-    items={[
-      {
-        title: 'Built on top of Astro 5.0',
-        description:
-          'Benefiting from the performance and developer-friendly features of this modern static site generator.',
-      },
-      {
-        title: 'Styled using Tailwind CSS',
-        description:
-          'Facilitating rapid design and consistent styling with this highly popular utility-first CSS framework.',
-      },
-      {
-        title: 'Cross-browser compatibility',
-        description:
-          'Ensure your website looks and functions consistently across various web browsers, delivering a seamless experience to all users.',
-      },
-    ]}
+    id="about"
     image={{
-      src: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Colorful Image',
+      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&fm=webp&fit=crop',
+      alt: '静かな山と湖の風景',
+    }}
+    items={[
+      { title: 'JAL DC-9機長 / 飛行時間1万時間', icon: 'tabler:plane' },
+      { title: 'ラーニングファシリテーター（14年）', icon: 'tabler:school' },
+      { title: '1on1ラーニングファシリテーター認定', icon: 'tabler:certificate' },
+      { title: 'ドローン一等無人航空機操縦士', icon: 'tabler:drone' },
+    ]}
+  >
+    <Fragment slot="content">
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white mb-6">私のこと</h2>
+      <p class="text-lg leading-relaxed dark:text-slate-400">
+        2010年、JALが破綻して、<br />
+        30年のキャリアが一瞬で消えました。<br /><br />
+        そこからも、自分なりに考えて、動いてきました。<br /><br />
+        あれこれ調べて、学んで、試して。<br /><br />
+        でも、やればやるほど、<br />
+        なんか迷宮に入っていく感じがあって。<br /><br />
+        気づいたら、ずっと探していたものは<br />
+        自分の中にありました。<br /><br />
+        一人で考えていても見えなかったものが、<br />
+        誰かと話すことで、少しずつ見えてきた。<br /><br />
+        大切なのは、大きな変化じゃなくて、<br />
+        小さな「できた」を積み重ねること。<br /><br />
+        そして、その小さな「できた」に<br />
+        自分で気づくこと。<br /><br />
+        それだけで、少しずつ変わっていく。
+      </p>
+    </Fragment>
+  </Content>
+
+  <!-- Section 6: 一緒に、見つける -->
+  <Content
+    id="together"
+    isReversed
+    image={{
+      src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80&fm=webp&fit=crop',
+      alt: '並んで歩く道',
     }}
   >
     <Fragment slot="content">
-      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Building on modern foundations</h3>
-      Gain a competitive advantage by incorporating industry leading practices
-    </Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Content Widget **************** -->
-
-  <Content
-    isAfterContent
-    items={[
-      {
-        title: 'High level of customization',
-        description: `Tailor the template effortlessly to match your brand's identity and requirements, making your website distinct and saving you time.`,
-      },
-      {
-        title: 'Multiple layout possibilities',
-        description:
-          'Explore various layout options to find the structure that best presents your content, enhancing user engagement and navigation.',
-      },
-      {
-        title: 'Fully responsive design',
-        description:
-          "Ensure your website's optimal performance on various devices and screen sizes, providing a consistent and enjoyable user experience.",
-      },
-      {
-        title: 'Integration of media',
-        description:
-          'Seamlessly incorporate images, videos, and multimedia elements that enhance your content and engage visitors effectively.',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2194&q=80',
-      alt: 'Blueprint Image',
-    }}
-  >
-    <Fragment slot="content">Ensure your online presence truly represents you.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+      <h2 class="text-3xl font-bold tracking-tight dark:text-white mb-6">一緒に、見つける</h2>
+      <p class="text-lg leading-relaxed dark:text-slate-400">
+        何か答えが欲しい。<br />
+        解決策を教えてもらいたい。<br /><br />
+        そう思って、セミナーに行ったり、<br />
+        コーチングを受けたり、<br />
+        本を読んだりしてきた方、多いと思います。<br /><br />
+        私もそうでした。<br /><br />
+        人から与えられた解決策って、<br />
+        その時はすごくいいんですよね。<br /><br />
+        「これだ」って感じる。<br /><br />
+        でも、しばらくすると<br />
+        また、あの感覚が戻ってくる。<br /><br />
+        うまくいっていない、あの感覚が。<br /><br />
+        解決策が悪かったわけじゃない。<br /><br />
+        自分のものになっていなかったから、<br />
+        だと思うんです。<br /><br />
+        鍵は、自分の思考の中にしかない。<br /><br />
+        でも、その鍵は<br />
+        自分一人では見つけられない。<br /><br />
+        だから、一緒に話します。<br /><br />
+        そして、話しながら<br />
+        「今、これを学ぶといいかも」と思ったとき、<br />
+        一緒に学んで、動いてみる。<br /><br />
+        話すだけじゃなくて、<br />
+        学んで、行動して、また話す。<br /><br />
+        その繰り返しの中で、<br />
+        自分の思考の中から<br />
+        自分で鍵を見つけられるようになる。<br /><br />
+        それが、私のやることです。
+      </p>
     </Fragment>
   </Content>
 
-  <!-- Content Widget **************** -->
-
-  <Content
-    isReversed
-    isAfterContent
-    items={[
-      {
-        title: 'Enhanced user engagement',
-        description:
-          'Captivate your audience with interactive elements, intuitive navigation, and visually appealing layouts, encouraging longer visits.',
-      },
-      {
-        title: 'Continuous improvement',
-        description:
-          'Ensure your website stays aligned with the latest trends and technologies through regular updates and enhancements.',
-      },
-      {
-        title: 'Time and resource efficiency',
-        description:
-          'Skip the time-consuming process of building a website from scratch and launch your online presence sooner with AstroWind.',
-      },
-      {
-        title: 'Community support',
-        description: `Join the growing AstroWind community for insights, resources, and assistance, ensuring you're never alone on your web development journey.`,
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1611462985358-60d3498e0364?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
-      alt: 'Astronauts Image',
-    }}
-  >
-    <Fragment slot="content">Designed to foster growth and success.</Fragment>
-
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Content>
-
-  <!-- Steps Widget ****************** -->
-
-  <Steps
-    title="Get your dream website up and running in no time with AstroWind."
-    items={[
-      {
-        title: 'Step 1: <span class="font-medium">Download</span>',
-        description:
-          "Kickstart with GitHub! Either fork the AstroWind template or simply click 'Use this template'. Your canvas awaits, ready for your digital masterpiece. In just a few clicks, you've already set the foundation.",
-        icon: 'tabler:package',
-      },
-      {
-        title: 'Step 2: <span class="font-medium">Add content</span>',
-        description:
-          "Pour your vision into it. Add images, text, and all that jazz to breathe life into your digital space. Remember, it's the content that tells your story, so make it captivating.",
-        icon: 'tabler:letter-case',
-      },
-      {
-        title: 'Step 3: <span class="font-medium">Customize styles</span>',
-        description:
-          'Give it your personal touch. Tailor colors, fonts, and layouts until it feels just right. Your unique flair, amplified by AstroWind! Precision in design ensures a seamless user experience.',
-        icon: 'tabler:paint',
-      },
-      {
-        title: 'Ready!',
-        icon: 'tabler:check',
-      },
-    ]}
-    image={{
-      src: 'https://images.unsplash.com/photo-1616198814651-e71f960c3180?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
-      alt: 'Steps image',
-    }}
-  />
-
-  <!-- Features2 Widget ************** -->
-
-  <Features2
-    title="Most used widgets"
-    subtitle="Provides frequently used components for building websites using Tailwind CSS"
-    tagline="Components"
-    items={[
-      {
-        title: 'Headers',
-        description: "Ever tried driving without GPS? Boom! That's why websites need headers for direction.",
-        icon: 'flat-color-icons:template',
-      },
-      {
-        title: 'Heros',
-        description:
-          "Picture a superhero landing – epic, right? That's the job of a Hero section, making grand entrances!",
-        icon: 'flat-color-icons:gallery',
-      },
-      {
-        title: 'Features',
-        description:
-          'Where websites strut their stuff and show off superpowers. No holding back on the bragging rights here!',
-        icon: 'flat-color-icons:approval',
-      },
-      {
-        title: 'Content',
-        description:
-          "Dive into the meat and potatoes of a site; without it, you'd just be window shopping. Content is king.",
-        icon: 'flat-color-icons:document',
-      },
-      {
-        title: 'Call-to-Action',
-        description:
-          'That enthusiastic friend who\'s always urging, "Do it! Do it!"? Yeah, that\'s this button nudging you towards adventure.',
-        icon: 'flat-color-icons:advertising',
-      },
-      {
-        title: 'Pricing',
-        description: 'Behold the dessert menu of the website world. Tempting choices await, can you resist?',
-        icon: 'flat-color-icons:currency-exchange',
-      },
-      {
-        title: 'Testimonial',
-        description: 'Step into the gossip corner! Here, other visitors spill the beans and share the juicy details.',
-        icon: 'flat-color-icons:voice-presentation',
-      },
-      {
-        title: 'Contact',
-        description:
-          'Like a digital mailbox, but faster! Drop a line, ask a question, or send a virtual high-five. Ding! Message in.',
-        icon: 'flat-color-icons:business-contact',
-      },
-      {
-        title: 'Footers',
-        description: "The footer's like the credits of a movie but sprinkled with easter eggs. Time to hunt!",
-        icon: 'flat-color-icons:database',
-      },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </Features2>
-
-  <!-- HighlightedPosts Widget ******* -->
-
-  <BlogLatestPosts
-    title="Find out more content in our Blog"
-    information={`The blog is used to display AstroWind documentation.
-                        Each new article will be an important step that you will need to know to be an expert in creating a website using Astro + Tailwind CSS.
-                        Astro is a very interesting technology. Thanks.
-                `}
-  />
-
-  <!-- FAQs Widget ******************* -->
-
-  <FAQs
-    title="Frequently Asked Questions"
-    subtitle="Dive into the following questions to gain insights into the powerful features that AstroWind offers and how it can elevate your web development journey."
-    tagline="FAQs"
-    classes={{ container: 'max-w-6xl' }}
-    items={[
-      {
-        title: 'Why AstroWind?',
-        description:
-          "Michael Knight a young loner on a crusade to champion the cause of the innocent. The helpless. The powerless in a world of criminals who operate above the law. Here he comes Here comes Speed Racer. He's a demon on wheels.",
-      },
-      {
-        title: 'What do I need to start?',
-        description:
-          'Space, the final frontier. These are the voyages of the Starship Enterprise. Its five-year mission: to explore strange new worlds. Many say exploration is part of our destiny, but it’s actually our duty to future generations.',
-      },
-      {
-        title: 'How to install the Astro + Tailwind CSS template?',
-        description:
-          "Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows.",
-      },
-      {
-        title: "What's something that you don't understand?",
-        description:
-          "A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear.",
-      },
-      {
-        title: 'What is something that you would like to try again?',
-        description:
-          "A business big enough that it could be listed on the NASDAQ goes belly up. Disappears! It ceases to exist without me. No, you clearly don't know who you're talking to, so let me clue you in.",
-      },
-      {
-        title: 'If you could only ask one question to each person you meet, what would that question be?',
-        description:
-          "This is not about revenge. This is about justice. A lot of things can change in twelve years, Admiral. Well, that's certainly good to know. About four years. I got tired of hearing how young I looked.",
-      },
-    ]}
-  />
-
-  <!-- Stats Widget ****************** -->
-
+  <!-- Section 7: ある副操縦士のこと -->
   <Stats
+    id="proof"
+    title="ある副操縦士のこと"
     stats={[
-      { title: 'Downloads', amount: '132K' },
-      { title: 'Stars', amount: '24.8K' },
-      { title: 'Forks', amount: '10.3K' },
-      { title: 'Users', amount: '48.4K' },
+      { amount: '7年間', title: '継続' },
+      { amount: '1,500人', title: '延べ参加者' },
+      { amount: 'パイロット向け', title: 'セミナー' },
     ]}
   />
 
-  <!-- CallToAction Widget *********** -->
+  <Content
+    image={{
+      src: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=80&fm=webp&fit=crop',
+      alt: 'コックピットからの空',
+    }}
+    isReversed
+  >
+    <Fragment slot="content">
+      <p class="text-lg leading-relaxed dark:text-slate-400">
+        機長審査に2回落ちた副操縦士がいました。<br /><br />
+        「もう、機長になることはないだろう」<br />
+        周りもそう思っていたし、<br />
+        本人もそう感じていた時期に、<br />
+        セミナーに来てくれました。<br /><br />
+        何かを教えたわけじゃない。<br /><br />
+        ただ、一緒に話して、学んで、<br />
+        自分で実践し続けてくれた。<br /><br />
+        半年後、周りから機長訓練に推薦されました。<br /><br />
+        そして、厳しい機長審査に、合格しました。<br /><br />
+        今では、素晴らしいキャプテンになっています。<br /><br />
+        変わったのは、彼自身の中にあったものが<br />
+        見えるようになったから、だと思っています。
+      </p>
+    </Fragment>
+  </Content>
 
-  <CallToAction
-    actions={[
+  <!-- Section 8: サービス -->
+  <WidgetWrapper id="service" containerClass="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tighter font-heading dark:text-white">
+        まず、話すだけでいいです。
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+      <!-- カード1: 現状整理セッション -->
+      <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">現状整理セッション</h3>
+          <p class="text-3xl font-bold mb-1 dark:text-white">無料 <span class="text-base font-normal text-muted">/ 60分</span></p>
+          <div class="mt-6 text-muted dark:text-slate-400 leading-relaxed">
+            <p>今の状況を、一緒に整理するだけの時間です。</p>
+            <p class="mt-3">何かを売ったり、<br />答えを出したりはしません。</p>
+            <p class="mt-3">ただ、話す場所として使ってください。</p>
+            <p class="mt-3">Zoom か、渋谷で対面か、どちらでも。</p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <Button variant="secondary" text="話してみる" href="#contact" class="w-full" />
+        </div>
+      </div>
+
+      <!-- カード2: 単発セッション（おすすめ） -->
+      <div class="relative rounded-lg border-2 border-primary bg-white dark:bg-slate-900 shadow-lg p-8 flex flex-col justify-between">
+        <div class="absolute top-0 right-4 -translate-y-1/2">
+          <span class="bg-primary text-white text-xs font-bold px-3 py-1 rounded-full uppercase">おすすめ</span>
+        </div>
+        <div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">単発セッション</h3>
+          <p class="text-3xl font-bold mb-1 dark:text-white">¥30,000<span class="text-base font-normal text-muted">（税込）/ 90分</span></p>
+          <div class="mt-6 text-muted dark:text-slate-400 leading-relaxed">
+            <p>気になっていることを、<br />一つに絞って深く話します。</p>
+            <p class="mt-3">一回だけでも全然いいですし、<br />続けたければ続けられます。</p>
+          </div>
+        </div>
+        <div class="mt-8">
+          <Button variant="primary" text="申し込む" href="https://buy.stripe.com/eVq5kD4fv2NDe4VatJbMQ04" target="_blank" rel="noopener" class="w-full" />
+        </div>
+      </div>
+
+      <!-- カード3: Re:Start 6ヶ月 -->
+      <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900 shadow p-8 flex flex-col justify-between">
+        <div>
+          <h3 class="text-xl font-semibold mb-2 dark:text-white">Re:Start</h3>
+          <p class="text-3xl font-bold mb-1 dark:text-white">¥330,000<span class="text-base font-normal text-muted">（税込）/ 6ヶ月</span></p>
+          <p class="text-sm text-muted">分割払い：¥110,000 × 3回</p>
+          <div class="mt-6 text-muted dark:text-slate-400 leading-relaxed">
+            <p>6ヶ月、一緒に走ります。</p>
+            <p class="mt-3">月2回、各90分の1on1セッション。<br />Zoom か渋谷で対面。</p>
+            <p class="mt-3">セッションの間も、<br />チャット・電話・メールでいつでも。</p>
+            <p class="mt-3">話しながら必要と感じたとき、<br />学習セミナーをお渡しします。</p>
+            <p class="mt-3">3ヶ月以内なら、半額お返しします。</p>
+            <p class="mt-3 font-semibold text-default dark:text-white">今は3名まで受けられます。</p>
+          </div>
+        </div>
+        <div class="mt-8 space-y-3">
+          <Button variant="primary" text="一括で申し込む（¥330,000）" href="https://buy.stripe.com/dRm6oHdQ51Jze4V31hbMQ05" target="_blank" rel="noopener" class="w-full" />
+          <Button variant="secondary" text="分割で申し込む（¥110,000×3回）" href="https://buy.stripe.com/6oUdR9fYdfApf8Z6dtbMQ06" target="_blank" rel="noopener" class="w-full" />
+        </div>
+      </div>
+    </div>
+  </WidgetWrapper>
+
+  <!-- Section 9: Re:Start 詳細 -->
+  <WidgetWrapper id="restart" containerClass="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tighter font-heading dark:text-white">
+        Re:Start — 9つのアプローチ
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
+      {[
+        { num: '1', title: 'GoodSelfイメージ統合法', desc: '自分を取り戻す' },
+        { num: '2', title: '手段目的ゲーム', desc: '原点に還る' },
+        { num: '3', title: '振り返りの技術', desc: '経験を智慧に変える' },
+        { num: '4', title: 'クリエーティブクエスチョン', desc: '問いを立て直す' },
+        { num: '5', title: 'メタ記憶術', desc: '学び方を変える' },
+        { num: '6', title: 'メンタルモデル', desc: '思考の癖を知る' },
+        { num: '7', title: 'DecisionMaking', desc: '決断し、動き出す' },
+        { num: '8', title: '読書を楽しく', desc: '本から学ぶ力を取り戻す' },
+        { num: '9', title: '人を育てるリーダーシップ', desc: 'チームで成果を出す' },
+      ].map((item) => (
+        <div class="flex items-start gap-4 p-4 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-slate-900">
+          <span class="flex-shrink-0 w-10 h-10 flex items-center justify-center rounded-full bg-primary text-white font-bold text-sm">{item.num}</span>
+          <div>
+            <p class="font-semibold dark:text-white">{item.title}</p>
+            <p class="text-sm text-muted dark:text-slate-400">{item.desc}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- プログラム詳細テーブル -->
+    <div class="max-w-3xl mx-auto">
+      <h3 class="text-2xl font-bold mb-6 text-center dark:text-white">プログラム詳細</h3>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left border-collapse">
+          <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">期間</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">6ヶ月</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">形式</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">月2回の1on1セッション（各90分）Zoom または 渋谷で対面</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">サポート</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">チャット・メール・電話（いつでも）</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">内容</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">1on1セッション＋必要に応じて学習セミナーを提供</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">価格</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">¥330,000（税込）</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">分割</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">3回分割可（¥110,000 × 3回）</td>
+            </tr>
+            <tr>
+              <td class="py-4 px-4 font-semibold text-default dark:text-white whitespace-nowrap">返金</td>
+              <td class="py-4 px-4 text-muted dark:text-slate-400">開始から3ヶ月以内の申し出で半額返金</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 text-center">
+        <span class="inline-block bg-primary/10 text-primary font-bold px-6 py-3 rounded-full text-lg">
+          現在3名まで受けられます
+        </span>
+      </div>
+    </div>
+  </WidgetWrapper>
+
+  <!-- Section 10: お問い合わせ -->
+  <WidgetWrapper id="contact" containerClass="max-w-4xl mx-auto py-20 md:py-28 lg:py-32">
+    <div class="text-center mb-12" style="font-size: 1.2rem; line-height: 2;">
+      <p class="text-default dark:text-slate-300">
+        変われないのは、あなたのせいじゃないと思う。<br /><br />
+        ただ、まだ見えていないだけで。<br /><br />
+        見えてくると、自然に動けるようになって、<br />
+        動くとまた見えてくる。<br /><br />
+        私もそうやって、少しずつ来ました。<br /><br />
+        もし「そうかもしれないな」と思えたら、<br />
+        60分だけ話してみませんか。<br /><br />
+        それだけでいいです。
+      </p>
+    </div>
+  </WidgetWrapper>
+
+  <Contact
+    inputs={[
       {
-        variant: 'primary',
-        text: 'Get template',
-        href: 'https://github.com/arthelokyo/astrowind',
-        target: '_blank',
-        icon: 'tabler:download',
+        type: 'text',
+        name: 'name',
+        label: 'お名前',
+        placeholder: 'お名前を入力してください',
+        autocomplete: 'name',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'メールアドレス',
+        placeholder: 'メールアドレスを入力してください',
+        autocomplete: 'email',
+      },
+      {
+        type: 'tel',
+        name: 'phone',
+        label: '電話番号（任意）',
+        placeholder: '電話番号を入力してください',
+        autocomplete: 'tel',
       },
     ]}
-  >
-    <Fragment slot="title">
-      Astro&nbsp;+&nbsp;<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">Tailwind CSS</span>
-    </Fragment>
+    textarea={{
+      label: 'ご相談内容',
+      name: 'message',
+      placeholder: 'ご相談内容をお書きください',
+      rows: 6,
+    }}
+    button="話してみる"
+    description="希望形式：Zoom / 渋谷で対面 / どちらでも可（ご相談内容にご記載ください）"
+  />
 
-    <Fragment slot="subtitle">
-      Be very surprised by these huge fake numbers you are seeing on this page. <br class="hidden md:inline" />Don't
-      waste more time! :P
-    </Fragment>
-  </CallToAction>
 </Layout>
