@@ -10,6 +10,10 @@ import CallToAction from '~/components/widgets/CallToAction.astro';
 import Button from '~/components/ui/Button.astro';
 import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
+import portraitMain from '~/assets/images/portrait-main.jpeg';
+import workshopImg from '~/assets/images/workshop.jpeg';
+import wingfoilImg from '~/assets/images/wingfoil.jpeg';
+
 const metadata = {
   title: '本質のコンパス — 小野和彦',
   ignoreTitleTemplate: true,
@@ -32,7 +36,7 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0">
         <img
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80&fm=webp&fit=crop"
+          src="/assets/images/hero-sky.jpeg"
           alt=""
           class="w-full h-full object-cover"
         />
@@ -115,15 +119,31 @@ const metadata = {
   <Content
     id="about"
     image={{
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&q=80&fm=webp&fit=crop',
-      alt: '静かな山と湖の風景',
+      src: portraitMain,
+      alt: '小野和彦',
     }}
   >
     <Fragment slot="content">
       <h2 class="text-3xl font-bold tracking-tight dark:text-slate-300 mb-6">私のこと</h2>
       <p class="text-lg leading-relaxed dark:text-slate-400">
         航空大学校を卒業した年に石油ショックが来て、<br />
-        航空会社への道が閉ざされました。<br /><br />
+        航空会社への道が閉ざされました。
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+        <figure class="text-center">
+          <img src="/assets/images/pilot-school.jpeg" alt="航空大学校時代" class="w-full rounded-lg shadow" />
+          <figcaption class="text-sm text-muted mt-2">航空大学校時代</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="/assets/images/aurora-plane.jpeg" alt="報道取材機オーロラの前で" class="w-full rounded-lg shadow" />
+          <figcaption class="text-sm text-muted mt-2">報道取材機時代</figcaption>
+        </figure>
+        <figure class="text-center">
+          <img src="/assets/images/wingfoil.jpeg" alt="wingfoilをする小野和彦" class="w-full rounded-lg shadow" />
+          <figcaption class="text-sm text-muted mt-2">今も挑戦中</figcaption>
+        </figure>
+      </div>
+      <p class="text-lg leading-relaxed dark:text-slate-400">
         営業職をしながらヘリの免許を取り、<br />
         報道取材の小型機を経て、定期航空へ。<br /><br />
         飛行時間は1万時間。多い方ではありませんが、<br />
@@ -154,8 +174,8 @@ const metadata = {
     id="together"
     isReversed
     image={{
-      src: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=1200&q=80&fm=webp&fit=crop',
-      alt: '並んで歩く道',
+      src: workshopImg,
+      alt: 'セッションの様子',
     }}
   >
     <Fragment slot="content">
@@ -200,8 +220,8 @@ const metadata = {
 
   <Content
     image={{
-      src: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&q=80&fm=webp&fit=crop',
-      alt: 'コックピットからの空',
+      src: wingfoilImg,
+      alt: 'wingfoilをする小野和彦',
     }}
     isReversed
   >
