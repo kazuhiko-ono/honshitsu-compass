@@ -12,7 +12,6 @@ import WidgetWrapper from '~/components/ui/WidgetWrapper.astro';
 
 import portraitMain from '~/assets/images/portrait-main.jpeg';
 import workshopImg from '~/assets/images/workshop.jpeg';
-import wingfoilImg from '~/assets/images/wingfoil.jpeg';
 
 const metadata = {
   title: '本質のコンパス — 小野和彦',
@@ -218,28 +217,34 @@ const metadata = {
     ]}
   />
 
-  <Content
-    image={{
-      src: wingfoilImg,
-      alt: 'wingfoilをする小野和彦',
-    }}
-    isReversed
-  >
-    <Fragment slot="content">
-      <p class="text-lg leading-relaxed dark:text-slate-400">
-        機長審査に2回落ちた副操縦士がいました。<br /><br />
-        「もう、機長になることはないだろう」<br />
-        周りもそう思っていた時期に、<br />
-        セミナーに来てくれました。<br /><br />
-        何かを教えたわけではありません。<br /><br />
-        ただ、一緒に話して、学んで、<br />
-        自分で実践し続けてくれました。<br /><br />
-        半年後、周りから機長訓練に推薦されました。<br />
-        そして、機長審査に合格しました。<br /><br />
-        今では、素晴らしいキャプテンになっています。
-      </p>
-    </Fragment>
-  </Content>
+  <WidgetWrapper containerClass="max-w-5xl mx-auto">
+    <p class="text-lg leading-relaxed text-center text-default dark:text-slate-300 mb-12" style="line-height: 2.2;">
+      機長審査に2回落ちた副操縦士がいました。<br /><br />
+      「もう、機長になることはないだろう」<br />
+      周りもそう思っていた時期に、<br />
+      セミナーに来てくれました。<br /><br />
+      何かを教えたわけではありません。<br /><br />
+      ただ、一緒に話して、学んで、<br />
+      自分で実践し続けてくれました。<br /><br />
+      半年後、周りから機長訓練に推薦されました。<br />
+      そして、機長審査に合格しました。<br /><br />
+      今では、素晴らしいキャプテンになっています。
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+      <figure class="text-center">
+        <img src="/assets/images/copilot.jpeg" alt="コックピット" class="w-full rounded-lg shadow" />
+        <figcaption class="text-sm text-muted mt-2">コックピットにて</figcaption>
+      </figure>
+      <figure class="text-center">
+        <img src="/assets/images/kouen.jpeg" alt="講演の様子" class="w-full rounded-lg shadow" />
+        <figcaption class="text-sm text-muted mt-2">講演</figcaption>
+      </figure>
+      <figure class="text-center">
+        <img src="/assets/images/seminar.jpeg" alt="セミナーの様子" class="w-full rounded-lg shadow" />
+        <figcaption class="text-sm text-muted mt-2">セミナー</figcaption>
+      </figure>
+    </div>
+  </WidgetWrapper>
 
   <!-- Section 8: サービス -->
   <WidgetWrapper id="service" containerClass="max-w-7xl mx-auto">
