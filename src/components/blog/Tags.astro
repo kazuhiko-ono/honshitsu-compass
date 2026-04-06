@@ -24,7 +24,7 @@ const { tags, class: className = 'text-sm', title = undefined, isCategory = fals
       )}
       <ul class={className}>
         {tags.map((tag) => (
-          <li class="inline-block mr-2 rtl:mr-0 rtl:ml-2 mb-2 py-1 px-3 rounded font-medium text-xs" style="background-color: #4a7c6f; color: #ffffff;">
+          <li class="inline-block mr-3 rtl:mr-0 rtl:ml-3 mb-2 font-medium text-xs" style="color: #4a7c6f;">
             {!APP_BLOG?.tag?.isEnabled ? (
               tag.title
             ) : (
